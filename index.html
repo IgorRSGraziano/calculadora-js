@@ -11,28 +11,28 @@
 
 <body>
     <main class="calculator">
-        <div class="calculator-result">
-
+        <div class="calculator-result-area">
+            <span class="calculator-result"></span>
         </div>
         <form class="calculator-keys">
-            <button class="calculator-keys-operator">C</button>
-            <button class="calculator-keys-operator">V</button>
-            <button class="calculator-keys-operator">/</button>
-            <button class="calculator-keys-operator">X</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="calculator-keys-operator">-</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="calculator-keys-operator">+</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="calculator-keys-operator calculator-key-equal">=</button>
-            <button class="calculator-key-zero">0</button>
-            <button>.</button>
+            <input type="button" class="calculator-keys-operator" onclick="clean()" value="C">
+            <input type="button" class="calculator-keys-operator" onclick="backspace()" value="<">
+            <input type="button" class="calculator-keys-operator" onclick="insert('/')" value="/">
+            <input type="button" class="calculator-keys-operator" onclick="insert('*')" value="X">
+            <input type="button" class="calculator-key-number" onclick="insert('7')" value="7">
+            <input type="button" class="calculator-key-number" onclick="insert('8')" value="8">
+            <input type="button" class="calculator-key-number" onclick="insert('9')" value="9">
+            <input type="button" class="calculator-keys-operator" onclick="insert('-')" value="-">
+            <input type="button" class="calculator-key-number" onclick="insert('4')" value="4">
+            <input type="button" class="calculator-key-number" onclick="insert('5')" value="5">
+            <input type="button" class="calculator-key-number" onclick="insert('6')" value="6">
+            <input type="button" class="calculator-keys-operator" onclick="insert('+')" value="+">
+            <input type="button" class="calculator-key-number" onclick="insert('1')" value="1">
+            <input type="button" class="calculator-key-number" onclick="insert('2')" value="2">
+            <input type="button" class="calculator-key-number" onclick="insert('3')" value="3">
+            <input type="button" class="calculator-keys-operator calculator-key-equal" onclick="calculate()" value="=">
+            <input type="button" class="calculator-key-zero" onclick="insert('0')" value="0">
+            <input type="button" onclick="insert('.')" value=".">
         </form>
     </main>
     <script src="script.js">

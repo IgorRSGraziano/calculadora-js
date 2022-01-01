@@ -21,10 +21,13 @@ body {
     
 }
 
-.calculator-result {
+.calculator-result-area {
     position: relative;
+    flex: 1;
+    align-self: flex-end;
+    margin: 15px;
 }
-.calculator-result::after {
+.calculator-result-area::after {
     content: "";
     width: 340px;
     height: 1px;
@@ -34,6 +37,13 @@ body {
     bottom: 0px;
 }
 
+.calculator-result {
+    font-size: 3rem;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+
 .calculator-keys  {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -41,14 +51,14 @@ body {
 
 
 
-.calculator-keys button {
+.calculator-keys input {
     background-color: black;
     color: white;
     border: none;
     font-size: 60px;
 }
 
-.calculator-keys button:hover {
+.calculator-keys input:hover {
     background-color: orange;
     border-radius: 7px;
     transition: 0.2s;
