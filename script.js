@@ -1,22 +1,44 @@
-console.log("Hello World <3")
+//Variáveis e funções
+
+const calculatorKeysNumber = document.querySelectorAll('.calculator-keys input')
 
 
+//Insere um número na área de resultado para depois realizar alguma operação com ele
 function insert(number) {
     let result = document.querySelector(".calculator-result").textContent;
     document.querySelector(".calculator-result").textContent = result + number
-
 }
 
+//Limpa todos caracteres da área de resultado
 function clean() {
     document.querySelector(".calculator-result").textContent = ''
 }
 
+
+//Limpa o útlimo caractere escrito na calculadora 
 function backspace() {
     let result = document.querySelector(".calculator-result").textContent
     document.querySelector(".calculator-result").textContent = result.slice(0, -1);
 }
 
+//Função que verifica o valor escrito pelo usuario, e altera ele para o resultado
 function calculate() {
-    let result = document.querySelector(".calculator-result").textContent
+    let result = document.querySelector(".calculator-result").textContent;
     document.querySelector(".calculator-result").textContent = eval(result)
 }
+
+//Execução
+
+
+//Verifica qual tecla foi pressionada, caso seja de alguma função irá executar a mesma, caso seja de algum número, irá inserir ele
+calculatorKeysNumber.forEach((calculatorKey) => {
+    calculatorKey.addEventListener('click', (e) => {
+        if (e.target.value === "=") {
+            calculate()
+        } else if (e.target.value === "C") {
+            clean()
+        } else {
+            insert(e.target.value)
+        }
+    })
+})
