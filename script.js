@@ -37,6 +37,8 @@ calculatorKeysNumber.forEach((calculatorKey) => {
             calculate()
         } else if (e.target.value === "C") {
             clean()
+        } else if (e.target.value === "<") {
+            backspace()
         } else {
             insert(e.target.value)
         }
