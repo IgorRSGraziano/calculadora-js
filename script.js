@@ -50,6 +50,3 @@ calculatorKeysNumber.forEach((calculatorKey) => {
         }
     })
 })
-
-
-//16 números
