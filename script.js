@@ -5,8 +5,8 @@ const calculatorKeysNumber = document.querySelectorAll('.calculator-keys input')
 
 //Insere um número na área de resultado para depois realizar alguma operação com ele
 function insert(number) {
-    let result = document.querySelector(".calculator-result").textContent;
-    document.querySelector(".calculator-result").textContent = result + number
+    const result = document.querySelector(".calculator-result").textContent;
+    result.length < 15 ? document.querySelector(".calculator-result").textContent = result + number : null
 }
 
 //Limpa todos caracteres da área de resultado
@@ -60,10 +60,11 @@ addEventListener('keydown', keyPressed => {
     for (let i = 0; i < calculatorKeysNumber.length; i++) {
         if (keyPressed.key === calculatorKeysNumber[i] || keyPressed.key === 'Enter') {
             calculate()
-        } else if (keyPressed.key === calculatorKeysNumber[i]) {
+        } else if (keyPressed.key === calculatorKeysNumber[i] || keyPressed.key === 'c') {
             clean()
         } else if (keyPressed.key === calculatorKeysNumber[i] || keyPressed.key === 'Backspace') {
             backspace()
+            break
         } else if (Array.prototype.findIndex.call(calculatorKeysNumber, el => el.value == keyPressed.key) != -1) {
             insert(keyPressed.key)
             break
