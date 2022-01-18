@@ -23,8 +23,14 @@ function backspace() {
 
 //Função que verifica o valor escrito pelo usuario, e altera ele para o resultado
 function calculate() {
-    let result = document.querySelector(".calculator-result").textContent;
-    document.querySelector(".calculator-result").textContent = eval(result)
+    let account = document.querySelector(".calculator-result");
+    const result = document.querySelector(".calculator-result").textContent = eval(account.textContent)
+
+    //Reduz o tamanho da fonte em caso de dizimas periódicas
+
+    result.toString().length > 15 ? account.style.fontSize = '2.5rem' : null
+
+    return result
 }
 
 //Execução
@@ -44,3 +50,6 @@ calculatorKeysNumber.forEach((calculatorKey) => {
         }
     })
 })
+
+
+//16 números
