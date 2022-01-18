@@ -17,13 +17,13 @@ function clean() {
 
 //Limpa o útlimo caractere escrito na calculadora 
 function backspace() {
-    let result = document.querySelector(".calculator-result").textContent
+    const result = document.querySelector(".calculator-result").textContent
     document.querySelector(".calculator-result").textContent = result.slice(0, -1);
 }
 
 //Função que verifica o valor escrito pelo usuario, e altera ele para o resultado
 function calculate() {
-    let account = document.querySelector(".calculator-result");
+    const account = document.querySelector(".calculator-result");
     const result = document.querySelector(".calculator-result").textContent = eval(account.textContent)
 
     //Reduz o tamanho da fonte em caso de dizimas periódicas
