@@ -33,6 +33,8 @@ function calculate() {
     return result
 }
 
+
+
 //Execução
 
 
@@ -49,4 +51,22 @@ calculatorKeysNumber.forEach((calculatorKey) => {
             insert(e.target.value)
         }
     })
+})
+
+//Insere o número que o usuário clicou pelo teclado
+
+addEventListener('keydown', keyPressed => {
+    //Utilizado o for para poder realizar um break e evitar o número seja repetido
+    for (let i = 0; i < calculatorKeysNumber.length; i++) {
+        if (keyPressed.key === calculatorKeysNumber[i] || keyPressed.key === 'Enter') {
+            calculate()
+        } else if (keyPressed.key === calculatorKeysNumber[i]) {
+            clean()
+        } else if (keyPressed.key === calculatorKeysNumber[i] || keyPressed.key === 'Backspace') {
+            backspace()
+        } else if (Array.prototype.findIndex.call(calculatorKeysNumber, el => el.value == keyPressed.key) != -1) {
+            insert(keyPressed.key)
+            break
+        }
+    }
 })
